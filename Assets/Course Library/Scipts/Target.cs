@@ -12,6 +12,8 @@ public class Target : MonoBehaviour
         private float xRange = 4;
         private float ySpawnPos = -6;
 
+    //private float lowerBound = -4;
+
     //public
 
 
@@ -41,9 +43,23 @@ public class Target : MonoBehaviour
         return Random.Range(-maxTorque, maxTorque);
     }
 
+    private void OnMouseDown()
+    {
+        Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Destroy(gameObject);
+    }
+
     // Update is called once per frame
     void Update()
     {
-        
+        //if(transform.position.y > lowerBound)
+        {
+        //    Destroy(gameObject);
+        //    Debug.Log("Oops");
+        }
     }
 }
